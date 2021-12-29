@@ -1,0 +1,32 @@
+public with sharing class ObjectHandler extends TriggerHandler{
+    
+    private Map<Id, Object> newObjectMap;
+    private Map<Id, Object> oldObjectMap;
+    private List<Object> newObjectList;
+    private List<Object> oldObjectList;
+    
+    public ObjectHandler() {
+        newObjectMap = (Map<Id, Object>) Trigger.newMap;
+        oldObjectMap = (Map<Id, Object>) Trigger.oldMap;
+        newObjectList = (List<Object>) Trigger.new;
+        oldObjectList = (List<Object>) Trigger.old;
+    }
+    
+    
+    protected override void beforeInsert() {
+        //Add Before insert Methods Here
+    }
+
+    protected override void afterInsert() {
+       //Add After insert Methods Here
+       //ObjectManager.MethodName(oldObjectMap,newObjectList);
+    }
+
+    protected override void beforeUpdate() {
+       //Add Before Update Methods Here
+    }
+
+    protected override void afterUpdate() {
+        //Add After Update Methods Here
+    }
+}
